@@ -1,15 +1,21 @@
 public class Sportmaster {
     public static void main(String[] args) {
-        int cumulativeSum = 15500;
-        int currentSum = 1500;
-        int bonus = currentSum / 1000;
-        if (cumulativeSum < 15001) {
-            bonus = bonus * 50;
-        } else if (cumulativeSum > 15000 && cumulativeSum < 150_001) {
-            bonus = bonus * 70;
+        int cumulativePurchases = 15000;
+        int currentPurchase = 1500;
+        int amountForBonus=currentPurchase/1000;
+        int bonusStandard = amountForBonus * 50;
+        int bonusSilver =amountForBonus * 70;
+        int bonusGold = amountForBonus * 100;
+        int limitForStandard= 15000;
+        int limitForSilver=150_000;
+        int bonusCurrent;
+        if (cumulativePurchases < limitForStandard+1) {
+            bonusCurrent = bonusStandard;
+        } else if (cumulativePurchases > limitForStandard && cumulativePurchases< limitForSilver+1) {
+            bonusCurrent = bonusSilver;
         } else {
-            bonus = bonus * 100;
+            bonusCurrent = bonusGold;
         }
-        System.out.println(bonus);
+        System.out.println(bonusCurrent);
     }
 }
