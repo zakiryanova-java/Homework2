@@ -9,9 +9,9 @@ public class Sportmaster {
         int limitForStandard= 15000;
         int limitForSilver=150_000;
         int bonusCurrent;
-        if (cumulativePurchases < limitForStandard+1) {
+        if (cumulativePurchases <= limitForStandard) {
             bonusCurrent = bonusStandard;
-        } else if (cumulativePurchases > limitForStandard && cumulativePurchases< limitForSilver+1) {
+        } else if (cumulativePurchases > limitForStandard && cumulativePurchases<= limitForSilver) {
             bonusCurrent = bonusSilver;
         } else {
             bonusCurrent = bonusGold;
